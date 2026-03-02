@@ -10,7 +10,7 @@ export interface ConversationContext {
 @Injectable()
 export class OpenAiService {
   openai = new OpenAI({
-    apiKey:process.env.OPEN_AI_API_KEY,
+    apiKey: process.env.OPEN_AI_API_KEY,
   });
   prevResponseId = '';
   constructor() {}
