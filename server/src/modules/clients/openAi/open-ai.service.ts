@@ -7,18 +7,26 @@ export interface ConversationContext {
   requiresModerateReasoning?: boolean;
   // Add other context properties as needed
 }
+
+export interface IMakeRequestParams {
+  input: string;
+  systemPrompt?: string;
+  tools?: OpenAI.Responses.Tool[];
+}
 @Injectable()
 export class OpenAiService {
-  openai = new OpenAI({
-    apiKey: process.env.OPEN_AI_API_KEY,
-  });
   prevResponseId = '';
-  constructor() {}
-  async makeRequest(params: { input: string }) {
+  openai: OpenAI;
+  constructor() {
+    this.openai = new OpenAI({
+      apiKey: process.env.OPEN_AI_API_KEY,
+    });
+  }
+  async makeRequest(params: IMakeRequestParams): Promise<string> {
     const preprocessedInput = this.preprocessUserInput(params.input);
     const response = await this.openai.responses.create({
       model: this.selectModel(preprocessedInput, {}),
-      reasoning: { effort: 'low' },
+      // reasoning: { effort: 'medium' },
       input: [
         {
           role: 'user',
@@ -29,16 +37,18 @@ export class OpenAiService {
           content: [
             {
               type: 'input_text',
-              text: this.getSystemInstruction(params.input),
+              text: params.systemPrompt,
             },
           ],
         },
       ],
-      previous_response_id: this.prevResponseId,
+      ...(this.prevResponseId
+        ? { previous_response_id: this.prevResponseId }
+        : {}),
       store: true,
-      // top_p: 0.9,
-      temperature: 1,
-      // tools: [{ type: 'web_search' }],
+      // top_p: 0.35,
+      // temperature: 2,
+      tools: params?.tools,
     });
 
     console.log(response.output_text, response);
@@ -50,7 +60,7 @@ export class OpenAiService {
   private selectModel(
     input: string,
     context: ConversationContext,
-  ): 'gpt-4o-mini' | 'gpt-4o' | 'o3-mini' {
+  ): 'gpt-4o-mini' | 'gpt-4o' | 'o3-mini' | 'gpt-5' {
     if (this.isSimpleQuery(input)) {
       return 'gpt-4o-mini';
     }
@@ -59,7 +69,7 @@ export class OpenAiService {
     }
 
     // Complex multi-step reasoning or specialized tasks
-    return 'o3-mini';
+    return 'gpt-4o-mini';
   }
 
   private isSimpleQuery(input: string): boolean {
@@ -98,11 +108,4 @@ export class OpenAiService {
     const uniqueSentences = [...new Set(sentences)];
     return uniqueSentences.join(' ');
   }
-
-  getSystemInstruction = (input: string): string => {
-    if (input.toLowerCase().includes('support')) {
-      return supportInstruction;
-    }
-    return assistantInstruction;
-  };
 }
