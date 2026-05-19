@@ -3,10 +3,10 @@ import { TechSupportService } from '../../services/techSupport.service';
 
 @Controller()
 export class SendRequestController {
-    constructor(private readonly therapistService: TechSupportService) { }
+    constructor(private readonly techSupportService: TechSupportService) { }
 
     @Post('techSupport/send-request')
     async sendRequest(@Body() body: { input: string }) {
-        return this.therapistService.askQuestion(body.input);
+        return this.techSupportService.askQuestion(body.input);
     }
 }

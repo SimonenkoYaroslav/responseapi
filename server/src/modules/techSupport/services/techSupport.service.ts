@@ -9,7 +9,8 @@ export class TechSupportService extends OpenAiService {
  and you should respond with a thoughtful and helpful answer. 
  Your response should be concise and to the point, while still providing clear instructions and solutions. 
  You should also ask follow-up questions to gather more information about the user's issue and provide more accurate assistance.
- Remember to always be respectful and patient in your responses.`;
+ Remember to always be respectful and patient in your responses.Always point out store you've used to get the answer from.`;
+
 
     async askQuestion(input: string) {
         const vectorStore = await this.openai.vectorStores.create({
@@ -19,17 +20,25 @@ export class TechSupportService extends OpenAiService {
         await this.openai.vectorStores.fileBatches.uploadAndPoll(
             vectorStore.id,
             {
-                files: [createReadStream(`${__dirname}/company.txt`)], 
+                files: [createReadStream(`/Users/aroslavsimonenko/Documents/pdpresponseapi/responseapi/server/src/modules/techSupport/services/company.txt`)],
             }
         );
-        return this.makeRequest({
+
+        const outputText = await this.makeRequest({
             input,
             systemPrompt: this.systemPrompt,
-            tools: [{ type: 'file_search', vector_store_ids: [vectorStore.id] }],
+            tools: [{ type: 'file_search', vector_store_ids: [vectorStore.id], max_num_results: 2 }],
         });
+
+
+        return `
+        ${this.prevResponseId && `Thanks for using MobileHub Global Tech Support! `}\n
+        ${outputText}\n
+        Best regards,
+        MobileHub Global Tech Support Team`;
     }
 
-    async initVectoreStore() {
+    async initVectorStore() {
         const vectorStore = await this.openai.vectorStores.create({
             name: "test"
         });
