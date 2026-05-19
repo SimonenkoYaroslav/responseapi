@@ -17,7 +17,7 @@ export class TherapistService extends OpenAiService {
     return this.makeRequest({
       input,
       systemPrompt: this.systemPrompt,
-      tools: [{ type: 'file_search', vector_store_ids: [] }],
+      tools: [{ type: 'web_search' }],
     });
   }
 

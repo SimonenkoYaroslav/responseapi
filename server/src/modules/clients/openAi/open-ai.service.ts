@@ -1,5 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import OpenAI from 'openai';
+import { Reasoning } from 'openai/resources';
 
 const { supportInstruction, assistantInstruction } = require('./config');
 
@@ -12,9 +13,14 @@ export interface IMakeRequestParams {
   input: string;
   systemPrompt?: string;
   tools?: OpenAI.Responses.Tool[];
+  top_p?: number;
+  top_k?: number;
+  temperature?: number;
+  reasoning?: Reasoning
 }
 @Injectable()
 export class OpenAiService {
+
   prevResponseId = '';
   openai: OpenAI;
   constructor() {
@@ -24,9 +30,9 @@ export class OpenAiService {
   }
   async makeRequest(params: IMakeRequestParams): Promise<string> {
     const preprocessedInput = this.preprocessUserInput(params.input);
+    const { systemPrompt, input, ...coreParams } = params;
     const response = await this.openai.responses.create({
       model: this.selectModel(preprocessedInput, {}),
-      // reasoning: { effort: 'medium' },
       input: [
         {
           role: 'user',
@@ -46,9 +52,7 @@ export class OpenAiService {
         ? { previous_response_id: this.prevResponseId }
         : {}),
       store: true,
-      // top_p: 0.35,
-      // temperature: 2,
-      tools: params?.tools,
+      ...coreParams,
     });
 
     console.log(response.output_text, response);
