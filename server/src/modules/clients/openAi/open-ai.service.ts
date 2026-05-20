@@ -48,6 +48,7 @@ export class OpenAiService {
           ],
         },
       ],
+
       ...(this.prevResponseId
         ? { previous_response_id: this.prevResponseId }
         : {}),
