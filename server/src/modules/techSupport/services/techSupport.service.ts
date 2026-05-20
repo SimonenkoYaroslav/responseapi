@@ -20,6 +20,7 @@ export class TechSupportService extends OpenAiService {
             const outputText = await this.makeRequest({
                 top_p: 0.5,
                 input,
+                temperature: 0.7,
                 systemPrompt: this.systemPrompt,
                 tools: [{ type: 'file_search', vector_store_ids: [this.vectorStore.id], max_num_results: 1 }],
             });
