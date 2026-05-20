@@ -1,0 +1,112 @@
+MobileHub Global — Customer FAQ & Technical Support Manual
+Q1: What payment options are available, and do you offer financing?
+Customer Answer: We support localized pricing and a variety of region-specific payment methods to make your checkout seamless. You can pay using major credit cards, PayPal, Apple Pay, and Google Pay. Additionally, we partner with local banks to offer installment financing options depending on your country.
+
+Tech Support Action Plan: 1. Verify the customer’s localized region/country if a payment failure occurs.
+2. Ensure the selected payment method aligns with regional availability.
+3. For financing issues, direct the customer to the specific partnered bank's portal, as financing is managed through our banking partners.
+
+Q2: What are your shipping methods, and how long will delivery take?
+Customer Answer: We offer three shipping tiers based on urgency and location:
+
+Standard Delivery: 5 to 8 business days (available for most regions).
+
+Express Delivery: 2 to 3 business days.
+
+Same-Day Delivery: Offered in select major cities for orders placed before 12:00 PM local time.
+
+Tech Support Action Plan:
+
+Pull up the order details to check the timestamp and selected shipping tier.
+
+For Same-Day Delivery inquiries, verify if the order missed the 12:00 PM local cutoff time.
+
+Cross-reference delivery delays with our certified logistics partners before escalating.
+
+Q3: Will I have to pay extra customs duties or import taxes when my order arrives?
+Customer Answer: No, there are no hidden fees. All international shipments include full customs documentation. Any applicable import duties and taxes are calculated and clearly displayed at checkout, ensuring you face no unexpected charges upon delivery.
+
+Tech Support Action Plan:
+
+If a customer reports being charged by local customs, request a copy/photo of the customs invoice.
+
+Check the order receipt to verify that duties were paid at checkout.
+
+If an error occurred on our logistics partner’s end, escalate to the Finance/Logistics department to resolve the customs clearance hold.
+
+Q4: How can I track my order?
+Customer Answer: All orders are fully tracked from the moment they leave our warehouse. You will automatically receive real-time tracking updates via email and SMS at every stage of the fulfillment process.
+
+Tech Support Action Plan:
+
+Locate the customer's order profile using their email, name, or phone number.
+
+Check if the contact info is accurate (errors in email/SMS formatting can block updates).
+
+Manually resend the automated tracking link or provide the tracking number directly from our fulfillment dashboard.
+
+Q5: Why was my order cancelled without my permission?
+Customer Answer: MobileHub Global reserves the right to cancel orders that trigger our automated risk systems. Common reasons include suspected fraudulent activity, unauthorized bulk reselling, or misuse of promotional pricing. If your order was cancelled for these reasons, a full refund is automatically issued to your original payment method within 3 to 5 business days.
+
+Tech Support Action Plan:
+
+Check the order status logs for the specific cancellation reason flag (Fraud, Bulk Resale, Promo Misuse).
+
+Confirm to the customer that the full refund has been initiated and will clear within 3–5 business days.
+
+If the customer contests a fraud flag, escalate the case to the Risk and Compliance Team for manual review.
+
+Q6: What should I do if my device arrives damaged, broken, or is the wrong model?
+Customer Answer: You are fully protected by our MobileHub Assurance Guarantee. If your device arrives damaged, defective, or significantly different from its description, you are entitled to a free replacement or a full refund. You do not need to deal with the manufacturer—we will handle everything directly.
+
+Tech Support Action Plan:
+
+Do not route the customer to the manufacturer.
+
+Request photographic or video evidence of the damage, defect, or incorrect item.
+
+Initiate an immediate return label for the incorrect/damaged item and process either a free replacement order or a full refund request.
+
+Q7: What kind of warranty covers Certified Pre-Owned (CPO) devices?
+Customer Answer: Every Certified Pre-Owned device undergoes a rigorous 72-point quality inspection before being listed. To give you peace of mind, all CPO devices carry a minimum 6-month MobileHub warranty that strictly covers confirmed hardware defects.
+
+Tech Support Action Plan:
+
+Verify the purchase date to ensure the device is within the 6-month CPO warranty window.
+
+Pull the device's history via IMEI/Serial number to confirm it passed the 72-point inspection log.
+
+Guide the user through basic hardware troubleshooting; if unresolved, initiate a warranty repair or replacement ticket.
+
+Q8: What is your standard return policy for new devices?
+Customer Answer: We offer a 30-day hassle-free return policy for all new, unused devices. The item must be returned in its original packaging with all included accessories and documentation intact. Once received and inspected, refunds are issued back to your original payment method within 5 to 10 business days.
+
+Tech Support Action Plan:
+
+Confirm the delivery date is within the 30-day window.
+
+Inform the customer that the device must be unused and in original packaging.
+
+Issue an RMA (Return Merchandise Authorization) label. Remind them that refunds take 5–10 business days after warehouse inspection.
+
+Q9: I opened and used my phone, but now it's acting up. Can I still return it?
+Customer Answer: Yes. If your device is defective, you are eligible for a full refund or a free exchange within 60 days of delivery, regardless of whether the device has been opened, unboxed, or activated.
+
+Tech Support Action Plan:
+
+Differentiate this from a standard return: because it is defective, the 30-day "unused" restriction does not apply; they have up to 60 days.
+
+Verify the delivery timestamp is under 60 days.
+
+If the item is returned outside this window or shows customer-caused physical damage, inform them they do not qualify for a full refund but may receive partial store credit at our discretion.
+
+Q10: How do I get technical assistance or book a repair if my warranty has expired?
+Customer Answer: Our Customer Care team is available via live chat, email, and phone from 8:00 AM to 10:00 PM in your local timezone. You can also browse over 5,000 troubleshooting articles in our Help Center. For physical repairs out of warranty, we partner with certified independent repair centers across 40 countries—you can book an appointment directly through the MobileHub app.
+
+Tech Support Action Plan:
+
+For basic software, SIM configuration, or data transfers, look up and share the corresponding guide from our 5,000+ Help Center database.
+
+If physical hardware repair is required and the manufacturer/MobileHub warranty is expired, check if the customer is in one of our 40 covered countries.
+
+Guide the customer on how to use the MobileHub mobile app to find a local certified independent repair center and seamlessly book an appointment.
