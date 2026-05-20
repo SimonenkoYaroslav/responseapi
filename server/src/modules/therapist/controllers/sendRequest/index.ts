@@ -6,7 +6,7 @@ import { SendRequestDTO } from 'src/modules/common/dto/input/sendRequest';
 export class SendRequestController {
   constructor(private readonly therapistService: TherapistService) { }
 
-  @Post('send-request')
+  @Post('/therapist/send-request')
   async sendRequest(@Body() body: SendRequestDTO) {
     return this.therapistService.askQuestion(body.input);
   }

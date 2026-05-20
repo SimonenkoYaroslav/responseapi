@@ -16,8 +16,12 @@ export class TherapistService extends OpenAiService {
   async askQuestion(input: string) {
     return this.makeRequest({
       input,
+      // reasoning: { effort: 'medium' },
       systemPrompt: this.systemPrompt,
       tools: [{ type: 'web_search' }],
+      // temperature: 2.0,
+      top_p: 0.4,
+      // top_k: 10,
     });
   }
 
